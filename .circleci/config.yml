@@ -84,18 +84,12 @@ workflows:
             branches:
               only: master
       - release_version_linux:
-          requires:
-            - test_linux
-            - test_macos
           filters:
             tags:
               only: /^v.*/
             branches:
               ignore: /.*/
       - release_version_macos:
-          requires:
-            - test_linux
-            - test_macos
           filters:
             tags:
               only: /^v.*/
